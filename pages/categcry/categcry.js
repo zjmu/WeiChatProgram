@@ -1,8 +1,4 @@
-// pages/about/about.js
-
-const app = getApp()
-console.log(app.globalData.name)
-console.log(app.globalData.age)
+// pages/categcry/categcry.js
 Page({
 
   /**

@@ -1,66 +1,50 @@
 // pages/home/home.js
+//调用App产生的示例对象
+const app = getApp()
+console.log(app.globalData.name)
+console.log(app.globalData.age)
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    name: "普罗米修斯",
+    students: [
+      { id: 1, name: "刘备", age: 56 },
+      { id: 2, name: "关羽", age: 56 },
+      { id: 3, name: "张飞", age: 56 },
+      { id: 4, name: "诸葛亮", age: 56 },
+      { id: 5, name: "赵云", age: 56 }
+    ],
+    count: 0,
+    list: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  addCount() {
+    this.setData({
+      count: this.data.count+1
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getUserInfo(event) {
+    console.log("用户信息")
+    console.log(event)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onShow() {
+    console.log('onShow')
+    wx.request({
+      url: 'http://123.207.32.32:8000/recommend',
+      success: function(res) {
+        console.log(res)
+        const dd = res.data;
+        this.setData({
+          list: dd
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onReady() {
+    console.log('onReady')
+  },  
+  onHide() {
+    console.log('onHide')
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onUnload() {
+    console.log('onUnLoad')
   }
 })
