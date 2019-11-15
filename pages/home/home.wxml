@@ -1,5 +1,5 @@
 <!--pages/home/home.wxml-->
-<view>{{name}}</view>
+<view bindtap="handleViewClick">{{name}}</view>
 
 <view wx:for = "{{students}}">{{item.id}} --{{item.name}}--{{item.age}}</view>
 

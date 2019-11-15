@@ -1,1 +1,6 @@
 /* pages/about/about.wxss */
+/* 样式结尾用; */
+.box {
+  color: blue;
+  /* font-size: 15px; */
+}

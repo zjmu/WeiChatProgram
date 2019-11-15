@@ -1,8 +1,10 @@
 {
   "pages": [
+    
     "pages/home/home",
     "pages/about/about",
     "pages/categcry/categcry"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff5777",
@@ -19,7 +21,7 @@
         "text": "首页",
         "iconPath": "asssets/tabbar/setting.png",
         "selectedIconPath": "asssets/tabbar/setting.png"
-      }, 
+      },
       {
         "pagePath": "pages/about/about",
         "text": "分类",
@@ -28,5 +30,6 @@
       }
     ],
     "selectedColor": "#ff5777"
-  }
+  },
+  "sitemapLocation": "sitemap95.json"
 }

@@ -1,2 +1,11 @@
 <!--pages/about/about.wxml-->
 <text>pages/about/about.wxml</text>
+
+<!-- 1.设置样式三种方式 -->
+<!-- 1.1内联样式 -->
+<view style="color: red; font-size:30px;">嘿嘿嘿</view>
+<!-- 1.2页内样式,可以声明多个，不可跨页 -->
+<view class="box container">呵呵呵</view>
+<!-- 1.3全局样式 -->
+<view class="container box">哈哈哈</view>
+<!-- 优先级：行内样式 > 页内样式 > 全局样式，互相覆盖 -->
