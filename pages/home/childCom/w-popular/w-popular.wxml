@@ -1,0 +1,4 @@
+<!--pages/home/childCom/w-popular/w-popular.wxml-->
+<view class="popular">
+  <image src="/assets/本周流行/本周流行.jpg" mode="widthFix"></image>
+</view>
