@@ -1,0 +1,24 @@
+/* pages/square/square.wxss */
+.flex-row {
+  width: 100%;
+}
+
+#flex-view-item1 {
+  background-color: red;
+  height: 50px;
+}
+
+#flex-view-item2 {
+  background-color: green;
+
+}
+
+#flex-view-item3 {
+  background-color: blue;
+}
+
+#attention {
+  position: relative;
+  left: calc(70%);
+  height: 1rpx;
+}

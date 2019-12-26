@@ -1,4 +1,4 @@
-// pages/profiles/profiles.js
+// pages/square/square.js
 Page({
 
   /**

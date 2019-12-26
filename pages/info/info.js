@@ -1,4 +1,4 @@
-// pages/cart/cart.js
+// pages/info/info.js
 Page({
 
   /**

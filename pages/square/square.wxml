@@ -1,0 +1,15 @@
+<!--pages/square/square.wxml-->
+<view class="flex-row">
+  <block>
+    <view id="flex-view-item1" style="display: flex;border-top: 20rpx solid #eee;">
+        <view>1</view>
+        <view>1</view>
+        <view id="attention">
+          <button style="height:60rpx;width:138rpx; margin-top:16rpx;">aaaa</button>
+        </view>
+    </view>
+    <view id="flex-view-item2">2</view>
+    <view id="flex-view-item3">3</view>
+  </block>
+</view>
+

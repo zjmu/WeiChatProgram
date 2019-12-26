@@ -1,4 +1,4 @@
-// pages/category/category.js
+// pages/message/message.js
 Page({
 
   /**

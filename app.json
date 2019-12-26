@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/category/category",
-    "pages/cart/cart",
-    "pages/profiles/profiles",
+    "pages/square/square",
+    "pages/message/message",
+    "pages/info/info",
     "components/w-swiper/w-swiper"
   ],
   "tabBar": {
@@ -15,20 +15,20 @@
         "selectedIconPath": "/assets/tabbar/首页2.png"
       },
       {
-        "pagePath": "pages/category/category",
-        "text": "分类",
+        "pagePath": "pages/square/square",
+        "text": "广场",
         "iconPath": "/assets/tabbar/分类1.png",
         "selectedIconPath": "/assets/tabbar/分类2.png"
       },
       {
-        "pagePath": "pages/cart/cart",
-        "text": "购物车",
+        "pagePath": "pages/message/message",
+        "text": "消息",
         "iconPath": "/assets/tabbar/购物车1.png",
         "selectedIconPath": "/assets/tabbar/购物车2.png"
       },
       {
-        "pagePath": "pages/profiles/profiles",
-        "text": "账户",
+        "pagePath": "pages/info/info",
+        "text": "我的",
         "iconPath": "/assets/tabbar/账户1.png",
         "selectedIconPath": "/assets/tabbar/账户2.png"
       }
