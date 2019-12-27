@@ -50,16 +50,3 @@
   width:30%;
   height:200rpx;
 }
-
-.sendarticle {
-  height: 70rpx;
-  width: 70rpx;
-  position: fixed;
-  bottom: 150rpx;
-  right: 20rpx;
-  opacity: 0.7;
-}
-.float {
-  z-index:100;
-  opacity:0;
-}

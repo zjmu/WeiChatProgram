@@ -1,0 +1,4 @@
+<view bindtap="floatClick">
+  <button class="sendarticle float"></button>
+  <image class="sendarticle" src="{{image}}"></image>
+</view>

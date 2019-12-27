@@ -1,0 +1,17 @@
+<!--pages/article/article.wxml-->
+<view class="section">
+  <textarea placeholder="这是一个可以自动聚焦的textarea" auto-focus />
+</view>
+
+<view class="sale after-pic">
+  <block wx:for="{{imgList}}" wx:key="{{index}}">
+    <view class="pic">
+      <image src="{{item}}" />
+      <icon type="clear" size="20" catchtap="clearImg" data-id="{{index}}"/>
+    </view>
+  </block>
+  <image src="../../images/upload.png" catchtap="chooseImage" />
+</view>
+<button catchtap="onSub">提交</button>
+
+

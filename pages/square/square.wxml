@@ -1,15 +1,10 @@
-<!--pages/square/square.wxml-->
-<view class="flex-row">
-  <block>
-    <view id="flex-view-item1" style="display: flex;border-top: 20rpx solid #eee;">
-        <view>1</view>
-        <view>1</view>
-        <view id="attention">
-          <button style="height:60rpx;width:138rpx; margin-top:16rpx;">aaaa</button>
-        </view>
-    </view>
-    <view id="flex-view-item2">2</view>
-    <view id="flex-view-item3">3</view>
-  </block>
-</view>
+
+<w-article articleList="{{articleList}}"/>
+
+<!-- <view bindtap="sendarticle">
+  <button class="sendarticle float"></button>
+  <image class="sendarticle" src="../../assets/tabbar/message.png"></image>
+</view> -->
+
+<w-float image="/assets/tabbar/message.png"/>
 

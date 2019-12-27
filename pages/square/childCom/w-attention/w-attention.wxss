@@ -1,0 +1,16 @@
+/* pages/square/w-attention/w-attention.wxss */
+.attention {
+  position: relative; 
+  left: calc(200%);
+  border: black;
+}
+.abutton{
+  line-height:40rpx;
+  height:60rpx;
+  width:138rpx; 
+  margin-top:16rpx;
+}
+.te{
+  vertical-align:middle; 
+  font-size:30rpx;
+}

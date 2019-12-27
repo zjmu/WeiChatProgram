@@ -4,7 +4,8 @@
     "pages/square/square",
     "pages/message/message",
     "pages/info/info",
-    "components/w-swiper/w-swiper"
+    "components/w-swiper/w-swiper",
+    "pages/article/article"
   ],
   "tabBar": {
     "list": [
@@ -39,5 +40,6 @@
     "navigationBarBackgroundColor": "#ff5777",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
-  }
+  },
+  "sitemapLocation": "sitemap98.json"
 }
