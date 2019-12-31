@@ -1,3 +1,0 @@
-<view class="attention">
-  <button plain="true" class="abutton"><text class="te">关注</text></button>
-</view>

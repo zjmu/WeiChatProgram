@@ -10,6 +10,14 @@
   padding:0 40rpx;
 }
 
+.flex-view-item1 image {
+  border-radius: 100%; 
+  width:90rpx; 
+  height:90rpx; 
+  position: relative; 
+  top: calc(10%)
+}
+
 .flex-view-item2 {
   background-color: green;
   padding:0 40rpx;
@@ -49,4 +57,20 @@
 .images {
   width:30%;
   height:200rpx;
+}
+
+.attention {
+  position: relative; 
+  left: calc(42%);
+  border: black;
+}
+.abutton{
+  line-height:40rpx;
+  height:60rpx;
+  width:138rpx; 
+  margin-top:16rpx;
+}
+.te{
+  vertical-align:middle; 
+  font-size:30rpx;
 }

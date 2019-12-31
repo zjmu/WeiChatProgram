@@ -65,6 +65,34 @@
 					"id": -1,
 					"name": "pages/article/article",
 					"pathName": "pages/article/article",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/info/info",
+					"pathName": "pages/info/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myArticle/myArticle",
+					"pathName": "pages/myArticle/myArticle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myAttention/myAttention",
+					"pathName": "pages/myAttention/myAttention",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myLike/myLike",
+					"pathName": "pages/myLike/myLike",
 					"scene": null
 				}
 			]

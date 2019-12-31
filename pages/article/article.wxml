@@ -1,17 +1,32 @@
-<!--pages/article/article.wxml-->
-<view class="section">
-  <textarea placeholder="这是一个可以自动聚焦的textarea" auto-focus />
-</view>
+<form>
+  <text>请选择标签</text>
+  <checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{label}}">
+    <checkbox value="{{item.id}}"/>{{item.label}}
+  </label>
+</checkbox-group>
+  <text>请输入标题</text>
+  <view class="section">
+    <input type="text" bindinput="inputTitle"/>
+  </view>
+  <text>请输入内容</text>
+  <view class="section">
+    <input type="text" bindinput="inputContent"/>
+  </view>
+</form>
 
-<view class="sale after-pic">
+<text>请添加图片</text>
+<view class="after-pic">
   <block wx:for="{{imgList}}" wx:key="{{index}}">
     <view class="pic">
-      <image src="{{item}}" />
-      <icon type="clear" size="20" catchtap="clearImg" data-id="{{index}}"/>
+      <icon type="clear" size="15" catchtap="clearImg" data-id="{{index}}"/>
+      <image mode ="aspectFit" src="{{item}}"/>
     </view>
   </block>
-  <image src="../../images/upload.png" catchtap="chooseImage" />
+  <image src="/assets/image/添加图片.png" mode="aspectFit" catchtap="chooseImage" />
 </view>
 <button catchtap="onSub">提交</button>
+
+<!-- /assets/tabbar/message.png -->
 
 

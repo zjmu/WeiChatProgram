@@ -28,7 +28,8 @@ Page({
           value: [{ image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }]
         }
       }
-      ]
+      ],
+      announcement: [{ image: '/assets/本周流行/本周流行.jpg',text:'这是一个广告' }, { image: '/assets/本周流行/本周流行.jpg',text:'这是一个大广告' }, { image: '/assets/本周流行/本周流行.jpg',text:'这是一个小广告' }]
   },
 
   /**

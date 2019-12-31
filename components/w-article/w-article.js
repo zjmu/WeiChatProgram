@@ -1,10 +1,13 @@
-// pages/square/w-attention/w-attention.js
+// components/w-article/w-article.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    articleList: {
+      type: Array,
+      value:[]
+    }
   },
 
   /**

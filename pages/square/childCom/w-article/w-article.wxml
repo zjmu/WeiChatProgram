@@ -2,17 +2,19 @@
   <block>
     <view class="flex-view-item1" style="display: flex;">
         <view>
-          <image  src="{{item.icon}}" style=" border-radius: 100%; width:90rpx; height:90rpx; position: relative; top: calc(10%)"></image>
+          <image  src="{{item.icon}}"></image>
         </view>
         <view style="display:block;">
           <view class="nick">{{item.nick}}</view>
           <view class="detail">{{item.detail}}</view>
         </view>
-        <w-attention/>
+        <view class="attention">
+          <button plain="true" class="abutton"><text class="te">关注</text></button>
+        </view>
     </view>
     <view class="flex-view-item2">{{item.content}}</view>
     <view class="flex-view-item3" wx:for="{{item.lineCount}}" wx:for-item="itemLine">
-      <view class="image-line" >
+      <view class="image-line">
         <block  wx:for="{{item.imageList.value}}" wx:for-item="itemNum">
           <image src="{{itemNum.image}}" class="images" ></image>
         </block>

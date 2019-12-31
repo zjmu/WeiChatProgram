@@ -1,10 +1,7 @@
 
+<!-- 公告栏 -->
+<w-swiper list="{{announcement}}"/>,
 <w-article articleList="{{articleList}}"/>
-
-<!-- <view bindtap="sendarticle">
-  <button class="sendarticle float"></button>
-  <image class="sendarticle" src="../../assets/tabbar/message.png"></image>
-</view> -->
 
 <w-float image="/assets/tabbar/message.png"/>
 

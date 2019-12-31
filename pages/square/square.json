@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "w-article": "./childCom/w-article/w-article",
-    "w-attention": "./childCom/w-attention/w-attention",
+    "w-swiper": "/components/w-swiper/w-swiper",
     "w-float": "./childCom/w-float/w-float"
   },
   "navigationBarTitleText": "广场"

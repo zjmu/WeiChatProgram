@@ -5,7 +5,10 @@
     "pages/message/message",
     "pages/info/info",
     "components/w-swiper/w-swiper",
-    "pages/article/article"
+    "pages/article/article",
+    "pages/myArticle/myArticle",
+    "pages/myAttention/myAttention",
+    "pages/myLike/myLike"
   ],
   "tabBar": {
     "list": [

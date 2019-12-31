@@ -1,4 +1,4 @@
-// pages/info/info.js
+// pages/myAttention/myAttention.js
 Page({
 
   /**
@@ -7,10 +7,29 @@ Page({
   data: {
     info: [{
       icon: '/assets/本周流行/本周流行.jpg',
-      nick: '绝色露台',
+      nick: '绝色露台0',
       detail: '我很个性',
-      userId: 99
-    }]
+      userId: 90
+    },
+    {
+      icon: '/assets/本周流行/本周流行.jpg',
+      nick: '绝色露台1',
+      detail: '我很个性',
+      userId: 91
+    },
+    {
+      icon: '/assets/本周流行/本周流行.jpg',
+      nick: '绝色露台2',
+      detail: '我很个性',
+      userId: 92
+    },
+    {
+      icon: '/assets/本周流行/本周流行.jpg',
+      nick: '绝色露台3',
+      detail: '我很个性',
+      userId: 93
+    },
+  ]
   },
 
   /**
@@ -67,21 +86,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  articleTap: function() {
-    wx.navigateTo({
-      url: '../myArticle/myArticle',
-    })
-  },
-  attentionTap: function() {
-    wx.navigateTo({
-      url: '../myAttention/myAttention',
-    })
-  },
-  likeTap: function() {
-    wx.navigateTo({
-      url: '../myLike/myLike',
-    })
   }
 })
