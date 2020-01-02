@@ -5,9 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    allPeopleSearch: '',
+    messagePeopleSearch: '',
+    navbar: ['消息', '联系人'],
+    currentTab: 1
   },
-
+  navbarTap: function(e){
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -62,5 +69,30 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  wxSearchFn1: function() {
+    console.log(this.data.messagePeopleSearch)
+  },
+  wxSearchFn2: function() {
+    console.log(this.data.allPeopleSearch)
+  },
+  messageInput:function(e) {
+    console.log(e)
+    this.data.messagePeopleSearch = e.detail.value
+    console.log(this.data.messagePeopleSearch)
+  },
+  allPeopleInput:function(e) {
+    console.log(e)
+    this.data.allPeopleSearch = e.detail.value
+    console.log(this.data.allPeopleSearch)
+  },
+  itemTap:function(event) {
+    console.log(event.currentTarget.dataset.id)
+  },
+  userTap:function(event) {
+    console.log(event.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../communication/communication',
+    })
   }
 })

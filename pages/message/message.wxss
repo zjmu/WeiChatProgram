@@ -1,1 +1,82 @@
-/* pages/message/message.wxss */
+@import "/assets/wxSearch/wxSearch.wxss";
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.navbar{
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+.navbar .item.active{
+  color: #FFCC00;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #FFCC00;
+}
+.infoBox {
+  background-color: red;
+  height: 50px;
+  padding:0 40rpx;
+}
+
+.infoBox image {
+  border-radius: 100%; 
+  width:90rpx; 
+  height:90rpx; 
+  position: relative; 
+  top: calc(10%)
+}
+
+.nick {
+  margin-top: 22rpx;
+  margin-left: 20rpx;
+  background-color: gray;
+  height: 36rpx;
+  font-size: 30rpx;
+}
+
+.text {
+  margin-left: 8rpx;
+  margin-top: 10rpx;
+  background-color: green;
+  font-size: 34rpx;
+}
+.box{
+  
+}
+
+.imageItem {
+  width: 85%;
+  float: left;
+  margin-top: 30rpx;
+  border-bottom: 4rpx solid gray;
+  margin-left: 50rpx;
+  margin-bottom:20rpx;
+}
+
+.imageItem image {
+  float: left;
+  margin-left: 30rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+.imageItem text {
+  margin-left: 60rpx;
+  float: left;
+  margin-top: 22rpx;
+}

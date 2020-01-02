@@ -20,5 +20,20 @@
         </block>
       </view>
     </view>
+    <!-- 文章附加信息 -->
+    <view class="articleAttach">
+      <view class="miniBox">浏览量</view>
+      <view class="miniBox">点赞量</view>
+      <view class="miniBox" bindtap="iscommentTap">评论</view>
+      <!-- 评论体 -->
+      <view wx:if="{{isopen}}" class="comment">
+        <view class="commentBox">
+          <view class="nickBox">fds</view>
+          <text class="contentBox">sfsdfsdfsdfsdfsdf放松的方式的方式sdfsdfsdfsdfsdfsdfsfsdf</text>
+          <view class="return">回复</view>
+        </view>
+      </view>
+    </view>
+
   </block>
 </view>

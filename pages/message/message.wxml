@@ -1,1 +1,68 @@
-<!--pages/message/message.wxml-->
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!--消息-->
+<view hidden="{{currentTab!==0}}">
+<import src="/assets/wxSearch/wxSearch.wxml"/>
+<view class="wxSearch-section">
+      <view class="wxSearch-pancel">
+          <input bindinput="messageInput" class="wxSearch-input" placeholder="搜索联系人"/>
+          <button class="wxSearch-button" bindtap="wxSearchFn1" size="mini" plain="true">搜索</button>
+      </view>
+</view>
+<template is="wxSearch" data="{{wxSearchData}}"/>
+<!-- 消息主体 -->
+<view class="infoBox" style="display: flex;" bindtap="userTap" data-id="0">
+    <view>
+      <image src="/assets/本周流行/本周流行.jpg" ></image>
+    </view>
+    <view style="display:block;">
+      <view class="nick">你曾</view>
+      <view class="text">跨过山和大海</view>
+    </view>
+</view>
+</view>
+ 
+<!--联系人-->
+<view hidden="{{currentTab!==1}}">
+<!-- 搜索框 -->
+<import src="/assets/wxSearch/wxSearch.wxml"/>
+<view class="wxSearch-section">
+      <view class="wxSearch-pancel">
+          <input bindinput="allPeopleInput" class="wxSearch-input" placeholder="搜索联系人"/>
+          <button class="wxSearch-button" bindtap="wxSearchFn2" size="mini" plain="true">搜索</button>
+      </view>
+</view>
+<template is="wxSearch" data="{{wxSearchData}}"/>
+<!-- 联系人主体 -->
+<view class="box">
+  <!-- 同小区 -->
+  <view class="imageItem" bindtap="itemTap" data-id="0">
+    <image src="/assets/image/xuexiao.png"></image>
+    <text>同小区</text>
+  </view>
+  <!-- 同楼栋 -->
+  <view class="imageItem" bindtap="itemTap" data-id="1">
+    <image src="/assets/image/fangzi.png"></image>
+    <text>同楼栋</text>
+  </view>
+  <!-- 同单元 -->
+  <view class="imageItem" bindtap="itemTap" data-id="2">
+    <image src="/assets/image/WMS.png"></image>
+    <text>同单元</text>
+  </view>
+  <!-- 同楼层 -->
+  <view class="imageItem" bindtap="itemTap" data-id="3">
+    <image src="/assets/image/WMSguanli.png"></image>
+    <text>同楼层</text>
+  </view>
+</view>
+
+
+
+
+</view>
+ 
+

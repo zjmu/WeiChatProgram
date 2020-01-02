@@ -7,7 +7,7 @@
   <block wx:for="{{list}}" wx:key="{{index}}">
     <swiper-item class="swiper-item">
       <image wx:if="{{item.text.length > 0}}" src="{{item.image}}" mode="widthFix"></image>
-      <view style="float:left"><text>我是标题啦啦啦</text></view>
+      <view class='swipertitle'><text>{{item.text}}</text></view>
     </swiper-item>
   </block>
 </swiper>
