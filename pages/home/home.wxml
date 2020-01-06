@@ -1,9 +1,18 @@
 <!--pages/home/home.wxml-->
 <!-- 1.展示轮播图 -->
-<w-swiper list="{{banners}}"/>
+<w-swiper list="{{announcement}}"/>
 
-<!-- 2.推荐数据展示 -->
-<w-recommend list="{{recommends}}"/>
+<!-- 2.分类 -->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
 
-<!-- 3.本周流行 -->
-<w-popular/>
+<view wx:for="{{topicItem}}" wx:key="index" data-topicId="{{item.topicId}}" bindtap="topicTap">
+  <view class="topicBox">
+    <image src="{{item.image}}" mode="widthFix"></image>
+    <view class="topicText">{{item.text}}</view>
+  </view>
+</view>
+
+
+

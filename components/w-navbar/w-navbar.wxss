@@ -3,16 +3,21 @@
   display: flex;
   background: #fff;
 }
-.navbar .item{
+.item{
   position: relative;
   flex: auto;
   text-align: center;
   line-height: 80rpx;
+  
 }
-.navbar .item.active{
-  color: #FFCC00;
+.active{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+  color: #FFCC00;  
 }
-.navbar .item.active:after{
+/* .navbar .item.active:after{
   content: "";
   display: block;
   position: absolute;
@@ -21,20 +26,4 @@
   right: 0;
   height: 4rpx;
   background: #FFCC00;
-}
-
-.topicBox {
-  width: 40%;
-  float: left;
-  margin: 26rpx 38rpx;
-}
-
-.topicBox image{
-  width: 100%;
-}
-
-.topicText{
-  width: 100%;
-  text-align:center;
-  background-color: blue;
-}
+} */

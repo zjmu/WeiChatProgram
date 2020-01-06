@@ -135,23 +135,16 @@
 }
 
 .commentBox {
-  /* flex-direction: row; */
-  /* display: flex; */
 }
 
 .nickBox{
   float: left;
   background-color: green;
-  flex:1;
   margin: 2rpx 12rpx;
 }
 
-.contentBox{
-  float: left;
-  background-color: white;
-}
 .return {
   float: right;
   background-color:blue;
-  margin: 2rpx 10rpx;
+  margin: 2rpx 0rpx;
 }

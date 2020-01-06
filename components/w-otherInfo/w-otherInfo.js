@@ -1,4 +1,4 @@
-// components/w-info/w-info.js
+// components/w-otherInfo/w-otherInfo.js
 Component({
   /**
    * 组件的属性列表
@@ -39,15 +39,15 @@ Component({
         url: '../myLike/myLike',
       })
     },
-    update: function() {
-      this.setData ({
-        isUpdate: !this.data.isUpdate
+    connect: function(e) {
+      var userId = e.currentTarget.dataset.userid
+      wx.navigateTo({
+        url: '../../pages/communication/communication',
+        success: function(res) {
+          // 通过eventChannel向被打开页面传送数据
+          res.eventChannel.emit('acceptDataFromOpenerPage', { data: userId })
+        }
       })
-      //TODO：修改结束，发送修改请求
-      if(!this.data.isUpdate) {
-        console.log('修改成功')
-      }
-      
     }
   }
 })

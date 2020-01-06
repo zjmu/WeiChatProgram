@@ -6,9 +6,13 @@
           <image src="{{item.icon}}"></image>
         </view>
         <view style="display:block;">
-          <view class="nick">{{item.nick}}</view>
-          <view class="detail">{{item.detail}}</view>
+          <input wx:if="{{isUpdate}}" class="nick" value="{{item.nick}}"></input>
+          <view wx:if="{{!isUpdate}}" class="nick">{{item.nick}}</view>
+          <input wx:if="{{isUpdate}}"  class="detail" value="{{item.detail}}"></input>
+          <view wx:if="{{!isUpdate}}" class="detail">{{item.detail}}</view>
         </view>
+        <!-- 修改信息 -->
+        <view class="updateButton" bindtap="update">{{isUpdate? '完成':'修改'}}</view>
     </view>
     <!-- 水平线 -->
     <view class="divLine"></view>
@@ -20,5 +24,13 @@
     <!-- 3.收藏 -->
       <view class="contentBox" bindtap="likeTap" data-id="{{item.userId}}">收藏</view>
     </view>
+    <!-- 住址 -->
+    <text class="begin">住址</text>
+    <input wx:if="{{isUpdate}}" class="other-input" value="{{item.home}}"></input>
+    <view wx:if="{{!isUpdate}}" class="other">{{item.home}}</view>
+    <!-- 联系方式 -->
+    <text class="begin">电话</text>
+    <input wx:if="{{isUpdate}}" class="other-input" value="{{item.phone}}"></input>
+    <view wx:if="{{!isUpdate}}" class="ohter">{{item.phone}}</view>
   </block>
 </view>

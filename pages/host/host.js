@@ -1,18 +1,11 @@
-// pages/info/info.js
+// pages/host/host.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info: [{
-      icon: '/assets/本周流行/本周流行.jpg',
-      nick: '绝色露台',
-      detail: '我很个性',
-      userId: 99,
-      home:'五社区五号楼220',
-      phone: '13255467789'
-    }]
+
   },
 
   /**
@@ -69,21 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  articleTap: function() {
-    wx.navigateTo({
-      url: '../myArticle/myArticle',
-    })
-  },
-  attentionTap: function() {
-    wx.navigateTo({
-      url: '../myAttention/myAttention',
-    })
-  },
-  likeTap: function() {
-    wx.navigateTo({
-      url: '../myLike/myLike',
-    })
   }
 })

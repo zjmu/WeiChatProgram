@@ -21,7 +21,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.10.0",
 	"appid": "wxb637a36cf6f08039",
 	"projectname": "firstProgram",
 	"debugOptions": {
@@ -100,6 +100,34 @@
 					"id": -1,
 					"name": "pages/message/message",
 					"pathName": "pages/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/home",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/message/message",
+					"pathName": "pages/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/communication/communication",
+					"pathName": "pages/communication/communication",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/select/select",
+					"pathName": "pages/select/select",
 					"scene": null
 				}
 			]

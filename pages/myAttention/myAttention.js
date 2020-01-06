@@ -9,26 +9,34 @@ Page({
       icon: '/assets/本周流行/本周流行.jpg',
       nick: '绝色露台0',
       detail: '我很个性',
-      userId: 90
+      userId: 90,
+      home:'五社区五号楼220',
+      phone:'13345679989'
     },
     {
       icon: '/assets/本周流行/本周流行.jpg',
       nick: '绝色露台1',
       detail: '我很个性',
-      userId: 91
+      userId: 91,
+      home:'五社区五号楼220',
+      phone:'13345679989'
     },
     {
       icon: '/assets/本周流行/本周流行.jpg',
       nick: '绝色露台2',
       detail: '我很个性',
-      userId: 92
+      userId: 92,
+      home:'五社区五号楼220',
+      phone:'13345679989'
     },
     {
       icon: '/assets/本周流行/本周流行.jpg',
       nick: '绝色露台3',
       detail: '我很个性',
-      userId: 93
-    },
+      userId: 93,
+      home:'五社区五号楼220',
+      phone:'13345679989'
+    }
   ]
   },
 

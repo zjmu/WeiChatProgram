@@ -1,0 +1,29 @@
+<view class="flex-row" wx:for="{{info}}" wx:key="{{index}}" wx:for-item="item">
+  <block>
+    <!-- 用户基本信息 -->
+    <view class="flex-view-item1">
+        <view>
+          <image src="{{item.icon}}"></image>
+        </view>
+        <view style="display:block;">
+          <view class="nick">{{item.nick}}</view>
+          <view class="detail">{{item.detail}}</view>
+          <!-- 住址 -->
+          <view class="home">{{item.home}}</view>
+          <!-- 电话 -->
+          <view class="phone">{{item.phone}}</view>
+        </view>
+        <text class="connectButton" bindtap="connect" data-userId="{{item.userId}}">通信</text>
+    </view>
+    <!-- 水平线 -->
+    <view class="divLine"></view>
+    <view class="lineBox">
+    <!-- 1.文章 -->
+      <view class="contentBox" bindtap="articleTap" data-id="{{item.userId}}">文章</view>
+    <!-- 2.关注 -->
+      <view class="contentBox" bindtap="attentionTap" data-id="{{item.userId}}">关注</view>
+    <!-- 3.收藏 -->
+      <view class="contentBox" bindtap="likeTap" data-id="{{item.userId}}">收藏</view>
+    </view>
+  </block>
+</view>

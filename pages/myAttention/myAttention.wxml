@@ -1,1 +1,1 @@
-<w-info info="{{info}}"/>
+<w-otherInfo info="{{info}}"/>

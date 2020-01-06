@@ -1,4 +1,4 @@
-<view class="flex-row" wx:for="{{articleList}}" wx:key="{{index}}" wx:for-item="item">
+<view class="flex-row" wx:for="{{articleList}}" wx:key="index" wx:for-item="item">
   <block>
     <view class="flex-view-item1" style="display: flex;">
         <view>
@@ -13,9 +13,9 @@
         </view>
     </view>
     <view class="flex-view-item2">{{item.content}}</view>
-    <view class="flex-view-item3" wx:for="{{item.lineCount}}" wx:for-item="itemLine">
+    <view class="flex-view-item3" wx:for="{{item.lineCount}}" wx:for-item="itemLine" wx:key="unique">
       <view class="image-line">
-        <block  wx:for="{{item.imageList.value}}" wx:for-item="itemNum">
+        <block  wx:for="{{item.imageList.value}}" wx:for-item="itemNum" wx:key="unique">
           <image src="{{itemNum.image}}" class="images" ></image>
         </block>
       </view>
@@ -24,13 +24,14 @@
     <view class="articleAttach">
       <view class="miniBox">浏览量</view>
       <view class="miniBox">点赞量</view>
-      <view class="miniBox" bindtap="iscommentTap">评论</view>
+      <view class="miniBox" bindtap="iscommentTap" data-index='{{index}}'>评论</view>
       <!-- 评论体 -->
-      <view wx:if="{{isopen}}" class="comment">
+      <view wx:if="{{isopen && index == openOrder}}" class="comment">
         <view class="commentBox">
-          <view class="nickBox">fds</view>
-          <text class="contentBox">sfsdfsdfsdfsdfsdf放松的方式的方式sdfsdfsdfsdfsdfsdfsfsdf</text>
-          <view class="return">回复</view>
+          <view class="nickBox">fds s放松dfsd水电费付付付付付付东方时尚所所所所所所所所所所所所所所所所所付付付付付fsdfsdfsfsdf
+            <view class="return">回复</view>
+          </view>
+          
         </view>
       </view>
     </view>

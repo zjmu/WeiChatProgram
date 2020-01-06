@@ -1,1 +1,94 @@
 /* pages/communication/communication.wxss */
+.message-left {
+  float: left;
+  margin: 20rpx 0rpx;
+  background-color: green;
+  width: 100%;
+}
+
+.icon-left {
+  float: left;
+  border-radius: 100%;
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  top: calc(10%);
+  margin: 0rpx 20rpx;
+}
+
+.message-left-text {
+  float: left;
+  margin-top: 25rpx;
+  background-color: yellow;
+}
+
+.message-right {
+  float: right;
+  margin: 20rpx 0rpx;
+  background-color: green;
+  width: 100%;
+}
+
+.icon-right {
+  float: right;
+  border-radius: 100%;
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  top: calc(10%);
+  margin: 0rpx 20rpx;
+}
+
+.message-right-text {
+  float: right;
+  margin-top: 25rpx;
+  background-color: yellow;
+}
+
+.input {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 90rpx;
+}
+
+.input input {
+  background: #f1f1f1;
+  height: 80rpx;
+  padding: 10rpx 20rpx;
+  font-size: 34rpx;
+  width: 67%;
+}
+
+.area {
+  width: 100%;
+  height: 90rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon {
+  width: 10%;
+  float: left;
+}
+
+.input .button {
+  width: 20%;
+  position: absolute;
+  background: #42c97f;
+  height: 90rpx;
+  line-height: 87rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.imgage-left {
+  float: left;
+  width: 260rpx;
+  position: relative;
+  margin: 0rpx 20rpx;
+}

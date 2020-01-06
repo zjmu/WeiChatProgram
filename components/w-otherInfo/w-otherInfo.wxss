@@ -7,7 +7,7 @@
 
 .flex-view-item1 {
   background-color: red;
-  height: 180rpx;
+  height: 220rpx;
   padding:0 40rpx;
   display: flex;
   width: 89%;
@@ -23,10 +23,11 @@
 }
 
 .nick {
-  margin-top: 46rpx;
+  margin-top: 20rpx;
   margin-left: 20rpx;
   background-color: gray;
-  height: 50rpx;
+  height:40rpx;
+  font-size: 30rpx;
 }
 
 .detail {
@@ -34,6 +35,24 @@
   margin-top: 10rpx;
   font-size: 30rpx;
   background-color: green;
+}
+
+.home {
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  background-color: green;
+  height:40rpx;
+}
+
+.phone {
+  height:40rpx;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  background-color: green;
+  height:40rpx;
 }
 
 .divLine{
@@ -56,31 +75,11 @@
    margin:30rpx 80rpx;
  }
 
- .other {
-   float: left;
-   margin-bottom: 20rpx;
-   margin-left: 20rpx;
-   width: 80%;
- }
-
- .other-input {
-  float: left;
-  margin-bottom: 20rpx;
-  margin-left: 20rpx;
-  width: 80%;
-  background-color: azure;
- }
-
- .begin {
-   float: left;
- }
-
- .updateButton {
-   position: absolute;
-   /* margin-left: 240rpx; */
-   left: calc(85%);
-   margin-top: 8rpx;
-   background-color: blue;
-   height: 54rpx;
-   width: 82rpx;
+ .connectButton {
+    position: absolute;
+    left: calc(85%);
+    margin-top: 8rpx;
+    background-color: blue;
+    height: 54rpx;
+    width: 82rpx;
  }

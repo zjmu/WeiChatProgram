@@ -9,7 +9,10 @@
     "pages/myArticle/myArticle",
     "pages/myAttention/myAttention",
     "pages/myLike/myLike",
-    "pages/communication/communication"
+    "pages/communication/communication",
+    "pages/topicPage/topicPage",
+    "pages/host/host",
+    "pages/select/select"
   ],
   "tabBar": {
     "list": [

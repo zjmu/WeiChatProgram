@@ -1,2 +1,17 @@
-<!--pages/communication/communication.wxml-->
-<text>pages/communication/communication.wxml</text>
+<view wx:for="{{message}}" wx:key="{{index}}" wx:for-item="item">
+<!-- 头像，消息，左 -->
+    <view class=" {{item.type == '接收方'? 'message-left' : 'message-right'}}">
+        <image class="{{item.type == '接收方'? 'icon-left' : 'icon-right'}}" src="{{item.icon}}"></image>
+        <text wx:if="{{item.resourceType=='文字'}}" class="{{item.type == '接收方'? 'message-left-text' : 'message-right-text'}}">{{item.content}}</text>
+        <image wx:if="{{item.resourceType=='图片'}}" class="imgage-left" src="{{item.imageUrl}}" mode="widthFix"></image>
+    </view>
+</view>
+
+<!-- 输入框，键盘收放 -->
+<view class="input" style="bottom:{{bottom}}px">
+    <view class="area">
+        <image class="icon" mode="widthFix" src="/assets/image/faimly album.png" bindtap="chooseImage"></image>
+        <input value="{{msgContent}}" placeholder='请输入文字内容' bindconfirm="sendMsgConfirm"  bindinput='inputTextChange' adjust-position="{{false}}" bindfocus="foucus" bindblur="blur" confirm-type="done"></input>
+        <view class="button" bindtap='sendMsgButton'>发送</view>
+    </view>
+</view>

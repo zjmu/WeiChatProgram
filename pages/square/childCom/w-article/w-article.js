@@ -15,18 +15,27 @@ Component({
    * 组件的初始数据
    */
   data: {
-    isopen:false
+    isopen:false,
+    openOrder: 0
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    iscommentTap: function() {
-      this.setData({
-        isopen: !this.data.isopen
-      })
+    iscommentTap: function(event) {
+      if(event.currentTarget.dataset.index == this.data.openOrder) {
+        this.setData({
+          isopen: !this.data.isopen,
+        })
+      } else {
+        this.setData({
+          openOrder: event.currentTarget.dataset.index,
+          isopen: true
+        })
+      }
       console.log(this.data.isopen)
+      console.log(this.data.openOrder)
     }
   }
 })

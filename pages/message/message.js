@@ -8,7 +8,7 @@ Page({
     allPeopleSearch: '',
     messagePeopleSearch: '',
     navbar: ['消息', '联系人'],
-    currentTab: 1
+    currentTab: 0
   },
   navbarTap: function(e){
     this.setData({
@@ -77,22 +77,27 @@ Page({
     console.log(this.data.allPeopleSearch)
   },
   messageInput:function(e) {
-    console.log(e)
     this.data.messagePeopleSearch = e.detail.value
-    console.log(this.data.messagePeopleSearch)
   },
   allPeopleInput:function(e) {
     console.log(e)
     this.data.allPeopleSearch = e.detail.value
     console.log(this.data.allPeopleSearch)
   },
+  //发送筛选信息
   itemTap:function(event) {
-    console.log(event.currentTarget.dataset.id)
+    console.log(event.currentTarget.dataset.text)
   },
   userTap:function(event) {
     console.log(event.currentTarget.dataset.id)
     wx.navigateTo({
       url: '../communication/communication',
+    })
+  },
+  //搜索跳转
+  selectTap: function() {
+    wx.navigateTo({
+      url: '../select/select',
     })
   }
 })
