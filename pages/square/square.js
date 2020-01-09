@@ -9,6 +9,7 @@ Page({
         icon: '/assets/本周流行/本周流行.jpg',
         nick: '绝色露台',
         detail: '我很个性',
+        userid: 33,
         content: '的方式放松放松放松的方范德萨水电费水电费是发送到发送到发式笛梵地方',
         lineCount: 2,
         imageLis: 3,
@@ -18,9 +19,11 @@ Page({
         }
       },
       {
+        icon: '/assets/本周流行/本周流行.jpg',
         nick: '绝色露台',
         detail: '我很个性',
         content: '的方式放松放松放松的方范德萨水电费水电费是发送到发送到发式笛梵地方',
+        userid: 33,
         lineCount: 2,
         imageLis: 3,
         imageList: {

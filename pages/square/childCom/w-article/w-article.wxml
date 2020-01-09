@@ -9,7 +9,7 @@
           <view class="detail">{{item.detail}}</view>
         </view>
         <view class="attention">
-          <button plain="true" class="abutton"><text class="te">关注</text></button>
+          <button plain="true" class="abutton" bindtap="attention" data-userid="{{item.userid}}"><text class="te">关注</text></button>
         </view>
     </view>
     <view class="flex-view-item2">{{item.content}}</view>
@@ -26,15 +26,15 @@
       <view class="miniBox">点赞量</view>
       <view class="miniBox" bindtap="iscommentTap" data-index='{{index}}'>评论</view>
       <!-- 评论体 -->
-      <view wx:if="{{isopen && index == openOrder}}" class="comment">
-        <view class="commentBox">
-          <view class="nickBox">fds s放松dfsd水电费付付付付付付东方时尚所所所所所所所所所所所所所所所所所付付付付付fsdfsdfsfsdf
-            <view class="return">回复</view>
+      <view wx:for="{{commentBody}}" wx:for-index="index1">
+        <view wx:if="{{isopen && index == openOrder}}" class="comment">
+          <view class="commentBox">
+            <view wx:if="{{item.returnnick == ''}}" class="nickBox">{{item.sendnick}}: {{item.text}}</view>
+            <view wx:else class="nickBox">{{item.sendnick}}回复{{item.returnnick}}: {{item.text}}</view>
+            <view class="return" bindtap="recomment" data-userid="{{item.userid}}">回复</view>
           </view>
-          
         </view>
       </view>
     </view>
-
   </block>
 </view>

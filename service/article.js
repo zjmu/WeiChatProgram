@@ -5,3 +5,11 @@ export function listLabel() {
     url: '/label/listLabel'
   })
 }
+
+export function sendArticle(data) {
+  return request({
+    url: '/article/create',
+    data: data,
+    method:'post'
+  })
+}
