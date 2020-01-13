@@ -7,7 +7,10 @@
         </view>
         <view style="display:block;">
           <view class="nick">{{item.nick}}</view>
-          <view class="time">{{item.time}}</view>
+          <view class="time">{{item.createTime}}</view>
+        </view>
+        <view class="delete">
+          <button plain="true" class="abutton" bindtap="delete" data-articleid="{{item.id}}"><text class="te">删除</text></button>
         </view>
     </view>
     <!-- 标题 -->
@@ -22,8 +25,8 @@
       <view class="vedioBox" wx:if="{{item.resourceType=='视频'}}">视频</view>
       <view class="imageBox" wx:if="{{item.resourceType=='图片'}}" wx:for="{{item.lineCount}}" wx:for-item="itemLine">
         <view class="image-line">
-          <block wx:for="{{item.imageList.value}}" wx:for-item="itemNum">
-            <image src="{{itemNum.image}}" class="images" ></image>
+          <block wx:for="{{item.articleExtVOS}}" wx:for-item="itemNum">
+            <image src="{{itemNum.resource}}" class="images" ></image>
           </block>
         </view>
       </view>
@@ -36,7 +39,7 @@
     <view class="lineBox">
       <view class="contentBox">分享{{item.shareNum}}</view>
       <view class="contentBox">点赞{{item.likeNum}}</view>
-      <view class="contentBox">收藏{{item.favoryNum}}</view>
+      <view class="contentBox">收藏{{item.viewNum}}</view>
     </view>
   </block>
 </view>

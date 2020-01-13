@@ -148,3 +148,13 @@
   background-color:blue;
   margin: 2rpx 0rpx;
 }
+
+.labelBox {
+  /* float: left; */
+}
+
+.labelItem {
+  /* float: left; */
+  width: 30%;
+  background-color: yellow;
+}

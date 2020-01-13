@@ -1,48 +1,31 @@
 // pages/myArticle/myArticle.js
+import {
+  deleteArticle,
+  listArticleOfUser
+} from '../../service/article.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    articleList: [{
-      icon: '/assets/本周流行/本周流行.jpg',
-      nick: '绝色露台',
-      time: '2019-12-31',
-      content: '的方式放松放松放松的方范德萨水电费水电费是发送到发送到发式笛梵地方',
-      lineCount: 2,
-      resourceType: '图片',
-      favoryNum: 1122,
-      likeNum: 2344,
-      shareNum: 567,
-      imageList: {
-        type: Array,
-        value: [{ image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg'}]
-      }
-    },
-    {
-      icon: '/assets/本周流行/本周流行.jpg',
-      nick: '绝色露台',
-      time: '2019-12-31',
-      content: '的方式放松放松放松的方范德萨水电费水电费是发送到发送到发式笛梵地方',
-      lineCount: 2,
-      resourceType: '图片',
-      favoryNum: 1122,
-      likeNum: 2344,
-      shareNum: 567,
-      imageList: {
-        type: Array,
-        value: [{ image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg'}]
-      }
-    }
-  ]
+    pageNum:1,
+    pageSize: 6,
+    articleList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    listArticleOfUser(this.data.pageNum,this.data.pageSize).then(res => {
+      console.log(res)
+      this.setData({
+        articleList: res.data.data.list
+      })
+      console.log(this.data.articleList)
+    })
   },
 
   /**
@@ -92,5 +75,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  delete: function(e) {
+    //删除文章
+    const id = e.currentTarget.dataset.articleid
+    console.log(id)
+    deleteArticle(id)
+    //删除后查询文章
+    listArticleOfUser(this.data.pageNum,this.data.pageSize).then(res => {
+      console.log(res)
+      this.setData({
+        articleList: res.data.data.list
+      })
+      console.log(this.data.articleList)
+    })
   }
 })

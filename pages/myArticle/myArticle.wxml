@@ -1,1 +1,47 @@
-<w-article articleList="{{articleList}}"/>
+<!-- <w-article articleList="{{articleList}}"/> -->
+
+<view class="flex-row" wx:for="{{articleList}}" wx:key="{{index}}" wx:for-item="item">
+  <block>
+    <!-- 头像、昵称、时间 --> <!-- 浏览量 -->
+    <view class="infoBox" style="display: flex;">
+        <view>
+          <image src="{{item.icon}}" style=" "></image>
+        </view>
+        <view style="display:block;">
+          <view class="nick">{{item.nick}}</view>
+          <view class="time">{{item.createTime}}</view>
+        </view>
+        <view class="delete">
+          <button plain="true" class="abutton" bindtap="delete" data-articleid="{{item.id}}"><text class="te">删除</text></button>
+        </view>
+    </view>
+    <!-- 标题 -->
+    <view class="titleBox">这是一首简单的小情歌</view>
+    <!-- 内容 -->
+    <view class="textBox">这是一个内容</view>
+    <!-- 资源： 音乐、视频、图片 -->
+    <view class="resourceBox">
+      <!-- todo:音乐内容 -->
+      <view class="songBox" wx:if="{{item.resourceType=='音乐'}}">音乐</view>
+      <!-- TODO：视频内容 -->
+      <view class="vedioBox" wx:if="{{item.resourceType=='视频'}}">视频</view>
+      <view class="imageBox" wx:if="{{item.resourceType=='图片'}}" wx:for="{{item.lineCount}}" wx:for-item="itemLine">
+        <view class="image-line">
+          <block wx:for="{{item.articleExtVOS}}" wx:for-item="itemNum">
+            <image src="{{itemNum.resource}}" class="images" ></image>
+          </block>
+        </view>
+      </view>
+    </view>
+    <!-- 水平线 -->
+    <view class="divLine"></view>
+    <!-- 收藏量 -->
+    <!-- 点赞量 -->
+    <!-- 分享量 -->
+    <view class="lineBox">
+      <view class="contentBox">分享{{item.shareNum}}</view>
+      <view class="contentBox">点赞{{item.likeNum}}</view>
+      <view class="contentBox">收藏{{item.viewNum}}</view>
+    </view>
+  </block>
+</view>

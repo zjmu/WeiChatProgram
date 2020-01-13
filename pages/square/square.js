@@ -1,36 +1,17 @@
 // pages/square/square.js
+import {
+  listArticlePage
+} from '../../service/square.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    articleList: [{
-        icon: '/assets/本周流行/本周流行.jpg',
-        nick: '绝色露台',
-        detail: '我很个性',
-        userid: 33,
-        content: '的方式放松放松放松的方范德萨水电费水电费是发送到发送到发式笛梵地方',
-        lineCount: 2,
-        imageLis: 3,
-        imageList: {
-          type: Array,
-          value: [{ image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg'}]
-        }
-      },
-      {
-        icon: '/assets/本周流行/本周流行.jpg',
-        nick: '绝色露台',
-        detail: '我很个性',
-        content: '的方式放松放松放松的方范德萨水电费水电费是发送到发送到发式笛梵地方',
-        userid: 33,
-        lineCount: 2,
-        imageLis: 3,
-        imageList: {
-          type: Array,
-          value: [{ image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }]
-        }
-      }
+    pageNum: 1,
+    pageSize: 10,
+    articleList: [
       ],
       announcement: [{ image: '/assets/本周流行/本周流行.jpg',text:'这是一个广告' }, { image: '/assets/本周流行/本周流行.jpg',text:'这是一个大广告' }, { image: '/assets/本周流行/本周流行.jpg',text:'这是一个小广告' }]
   },
@@ -39,7 +20,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    listArticlePage(this.data.pageNum,this.data.pageSize).then(res => {
+      console.log(res)
+      this.setData({
+        articleList: res.data.data.list
+      })
+      console.log(this.data.articleList1)
+    })
   },
 
   /**
@@ -81,7 +68,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log('我到底了')
+    this.data.pageNum++;
+    console.log(this.data.pageNum)
   },
 
   /**

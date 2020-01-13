@@ -83,3 +83,21 @@
   width:30%;
   height:200rpx;
 }
+
+.delete {
+  position: relative; 
+  left: calc(39%);
+  border: black;
+}
+
+.te{
+  vertical-align:middle; 
+  font-size:30rpx;
+}
+
+.abutton{
+  line-height:40rpx;
+  height:60rpx;
+  width:138rpx; 
+  margin-top:16rpx;
+}

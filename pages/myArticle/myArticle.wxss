@@ -1,0 +1,103 @@
+.flex-row {
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.infoBox {
+  background-color: red;
+  height: 50px;
+  padding:0 40rpx;
+}
+
+.infoBox image {
+  border-radius: 100%; 
+  width:90rpx; 
+  height:90rpx; 
+  position: relative; 
+  top: calc(10%)
+}
+
+.nick {
+  margin-top: 22rpx;
+  margin-left: 20rpx;
+  background-color: gray;
+  height: 36rpx;
+  font-size: 30rpx;
+}
+
+.time {
+  margin-left: 8rpx;
+  margin-top: 10rpx;
+  background-color: green;
+  font-size: 34rpx;
+}
+
+.titleBox {
+  margin: 5rpx 0rpx;
+  background-color: blueviolet;
+}
+
+.textBox {
+  background-color: blue;
+  margin: 20rpx 0rpx;
+}
+
+.resourceBox {
+  background-color: brown;
+}
+
+ .divLine{
+  background: gray;
+  width: 100%;
+  height: 6rpx;
+ }
+
+ .lineBox {
+   float: left;
+   width: 100%;
+ }
+
+ .contentBox {
+   margin: 12rpx 0;
+   float: left;
+   flex-direction:row;
+   background-color: greenyellow;
+   text-align: center;
+   font-size: 30rpx;
+   width: 33.3%;
+   margin-bottom: 60rpx;
+ }
+
+ .imageBox {
+   background-color: chocolate;
+ }
+
+ .image-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  width:30%;
+  height:200rpx;
+}
+
+.delete {
+  position: relative; 
+  left: calc(39%);
+  border: black;
+}
+
+.te{
+  vertical-align:middle; 
+  font-size:30rpx;
+}
+
+.abutton{
+  line-height:40rpx;
+  height:60rpx;
+  width:138rpx; 
+  margin-top:16rpx;
+}

@@ -6,17 +6,27 @@
         </view>
         <view style="display:block;">
           <view class="nick">{{item.nick}}</view>
-          <view class="detail">{{item.detail}}</view>
+          <view class="detail">{{item.signature}}</view>
         </view>
         <view class="attention">
-          <button plain="true" class="abutton" bindtap="attention" data-userid="{{item.userid}}"><text class="te">关注</text></button>
+          <button plain="true" class="abutton" bindtap="attention" data-userid="{{item.userId}}"><text class="te">关注</text></button>
         </view>
     </view>
-    <view class="flex-view-item2">{{item.content}}</view>
+    <!-- 标签 -->
+    <view wx:for="{{item.label}}" wx:for-index="labelIndex" wx:for-item="labelItem" class="labelBox">
+      <view class="labelItem">{{labelItem}}</view>
+    </view>
+    <!-- 标题 -->
+    <view>{{item.title}}</view>
+    <view wx:if="{{item.content != null}}" class="flex-view-item2">{{item.content}}</view>
     <view class="flex-view-item3" wx:for="{{item.lineCount}}" wx:for-item="itemLine" wx:key="unique">
+      <!-- TODO：音频内容 -->
+      <view class="songBox" wx:if="{{item.resourceType=='音乐'}}">音乐</view>
+      <!-- TODO：视频内容 -->
+      <view class="vedioBox" wx:if="{{item.resourceType=='视频'}}">视频</view>
       <view class="image-line">
-        <block  wx:for="{{item.imageList.value}}" wx:for-item="itemNum" wx:key="unique">
-          <image src="{{itemNum.image}}" class="images" ></image>
+        <block wx:if="{{item.resourceType=='图片'}}" wx:for="{{item.articleExtVOS}}" wx:for-item="itemNum" wx:key="unique">
+          <image src="{{itemNum.resource}}" class="images" ></image>
         </block>
       </view>
     </view>
