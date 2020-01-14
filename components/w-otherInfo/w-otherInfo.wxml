@@ -7,13 +7,14 @@
         </view>
         <view style="display:block;">
           <view class="nick">{{item.nick}}</view>
-          <view class="detail">{{item.detail}}</view>
+          <view class="detail" >{{item.signature}}</view>
           <!-- 住址 -->
-          <view class="home">{{item.home}}</view>
+          <view class="home" wx:if="{{item.home != null}}">{{item.home}}</view>
           <!-- 电话 -->
           <view class="phone">{{item.phone}}</view>
         </view>
         <text class="connectButton" bindtap="connect" data-userId="{{item.userId}}">通信</text>
+        <text class="attentionButton" bindtap="atten" data-userId="{{item.userId}}">取关</text>
     </view>
     <!-- 水平线 -->
     <view class="divLine"></view>

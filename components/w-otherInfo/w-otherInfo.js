@@ -28,9 +28,13 @@ Component({
       })
     },
     attentionTap: function(event) {
-      console.log(event.currentTarget.dataset.id)
+      const userId = event.currentTarget.dataset.id
       wx.navigateTo({
-        url: '../myAttention/myAttention',
+        url: '../otherAttention/otherAttention?userId',
+        success: function(res) {
+          // 通过eventChannel向被打开页面传送数据
+          res.eventChannel.emit('acceptDataFromOpenerPage', { data: userId })
+        }
       })
     },
     likeTap: function(event) {
@@ -48,6 +52,10 @@ Component({
           res.eventChannel.emit('acceptDataFromOpenerPage', { data: userId })
         }
       })
+    },
+    atten: function(e) {
+      var userId = e.currentTarget.dataset.userid
+      console.log(userId)
     }
   }
 })

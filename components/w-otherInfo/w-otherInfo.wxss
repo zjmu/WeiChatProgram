@@ -83,3 +83,12 @@
     height: 54rpx;
     width: 82rpx;
  }
+
+ .attentionButton {
+  position: absolute;
+  left: calc(85%);
+  margin-top: 70rpx;
+  background-color: gray;
+  height: 54rpx;
+  width: 82rpx;
+}

@@ -1,12 +1,8 @@
-// pages/myAttention/myAttention.js
 import {
-  listAttention
+  listOtherAttention
 } from '../../service/attention.js'
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     info: []
   },
@@ -15,13 +11,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    listAttention().then(res => {
-      console.log(res)
-      this.setData({
-        info: res.data.data
+    //获取传值信息
+    const eventChannel = this.getOpenerEventChannel();
+    const that = this
+    eventChannel.on('acceptDataFromOpenerPage', function(userId) {
+      console.log('-------------------------------')
+      console.log(userId)
+      //根据userId查别人关注的人
+      listOtherAttention(userId.data).then(res => {
+        console.log(res)
+        that.data.info = res.data.data
+        console.log(this.data.info)
       })
-      console.log(this.data.info)
     })
+    
   },
 
   /**

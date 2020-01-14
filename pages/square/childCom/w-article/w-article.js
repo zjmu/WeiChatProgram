@@ -1,4 +1,8 @@
 // pages/square/childCom/w-article/w-article.js
+import {
+  listComment,
+  createComment
+} from '../../../../service/comment.js'
 Component({
   /**
    * 组件的属性列表
@@ -16,31 +20,12 @@ Component({
    */
   data: {
     isopen:false,
-    openOrder: 0,
-    commentBody: [{
-      sendnick:'秦始皇',
-      returnnick:'李白',
-      userid:1,
-      text: '我要修建世界上最大的防御工事'
-    },
-    {
-      sendnick:'秦始皇1',
-      returnnick:'李白',
-      userid:2,
-      text: '我要修建世界上最大的防御工事'
-    },
-    {
-      sendnick:'秦始皇2',
-      returnnick:'',
-      userid:3,
-      text: '我要修建世界上最大的防御工事'
-    },{
-      sendnick:'秦始皇3',
-      returnnick:'',
-      userid:4,
-      text: '我要修建世界上最大的防御工事'
-    }
-  ]
+    openOrder: -1,
+    commentBody: [],
+    showModal: false,
+    commentText:'',
+    commentId:-1,
+    articleId:-1
   },
 
   /**
@@ -57,15 +42,65 @@ Component({
           openOrder: event.currentTarget.dataset.index,
           isopen: true
         })
+        //发送评论请求
+        var articleId = event.currentTarget.dataset.articleid
+        console.log(articleId)
+        console.log('sdfsfsdf')
+        listComment(articleId).then(res => {
+          console.log(res)
+          this.setData({
+            commentBody:res.data.data
+          })
+        })
       }
-      console.log(this.data.isopen)
-      console.log(this.data.openOrder)
     },
     recomment:function(e) {
-      console.log(e.currentTarget.dataset.userid)
+      this.showDialogBtn();
+      this.data.commentId = e.currentTarget.dataset.commentid
+      this.data.articleId = e.currentTarget.dataset.articleid
     },
     attention:function(e) {
       console.log(e.currentTarget.dataset.userid)
+    },
+
+    // --------------弹框----------------
+    showDialogBtn: function() {
+      this.setData({
+        showModal: true
+      })
+    },
+    /**
+     * 弹出框蒙层截断touchmove事件
+     */
+    preventTouchMove: function () {
+    },
+    /**
+     * 隐藏模态对话框
+     */
+    hideModal: function () {
+      this.setData({
+        showModal: false
+      });
+    },
+
+    onCancel: function () {
+      this.hideModal();
+    },
+
+    onConfirm: function () {
+      this.hideModal();
+      const text = this.data.commentText
+      const commentId = this.data.commentId
+      const articleId = this.data.articleId
+      createComment(text,commentId,articleId).then(res => {
+        console.log(res)
+      })
+    },
+    inputChange: function(e) {
+      this.setData({
+        commentText: e.detail.value
+      })
     }
+    
   }
 })

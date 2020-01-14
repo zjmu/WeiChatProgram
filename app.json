@@ -12,7 +12,8 @@
     "pages/communication/communication",
     "pages/topicPage/topicPage",
     "pages/host/host",
-    "pages/select/select"
+    "pages/select/select",
+    "pages/otherAttention/otherAttention"
   ],
   "tabBar": {
     "list": [

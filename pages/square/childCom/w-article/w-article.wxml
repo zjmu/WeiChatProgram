@@ -13,7 +13,7 @@
         </view>
     </view>
     <!-- 标签 -->
-    <view wx:for="{{item.label}}" wx:for-index="labelIndex" wx:for-item="labelItem" class="labelBox">
+    <view wx:key='unique' wx:for="{{item.label}}" wx:for-index="labelIndex" wx:for-item="labelItem" class="labelBox">
       <view class="labelItem">{{labelItem}}</view>
     </view>
     <!-- 标题 -->
@@ -34,17 +34,34 @@
     <view class="articleAttach">
       <view class="miniBox">浏览量</view>
       <view class="miniBox">点赞量</view>
-      <view class="miniBox" bindtap="iscommentTap" data-index='{{index}}'>评论</view>
+      <view class="miniBox" bindtap="iscommentTap" data-index='{{index}}' data-articleid='{{item.id}}'>评论</view>
       <!-- 评论体 -->
-      <view wx:for="{{commentBody}}" wx:for-index="index1">
+      <view wx:for="{{commentBody}}" wx:for-index="index1" wx:for-item="commentItem" wx:key='unique'>
         <view wx:if="{{isopen && index == openOrder}}" class="comment">
           <view class="commentBox">
-            <view wx:if="{{item.returnnick == ''}}" class="nickBox">{{item.sendnick}}: {{item.text}}</view>
-            <view wx:else class="nickBox">{{item.sendnick}}回复{{item.returnnick}}: {{item.text}}</view>
-            <view class="return" bindtap="recomment" data-userid="{{item.userid}}">回复</view>
+            <view wx:if="{{commentItem.returnNick == ''}}" class="nickBox">{{commentItem.sendNick}}: {{commentItem.text}}</view>
+            <view wx:else class="nickBox">{{commentItem.sendNick}} 回复 {{commentItem.returnNick}}: {{commentItem.text}}</view>
+            <view class="return" bindtap="recomment" data-commentid="{{commentItem.id}}" data-articleid="{{item.id}}">回复</view>
           </view>
         </view>
       </view>
     </view>
   </block>
+</view>
+
+
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">评论</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" bindinput="inputChange" class="input" placeholder="请输入评论"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
 </view>
