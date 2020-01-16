@@ -4,7 +4,8 @@ import {
 Page({
 
   data: {
-    info: []
+    ad: 0,
+    attentionInfo:[]
   },
 
   /**
@@ -13,18 +14,18 @@ Page({
   onLoad: function (options) {
     //获取传值信息
     const eventChannel = this.getOpenerEventChannel();
-    const that = this
+    var that
     eventChannel.on('acceptDataFromOpenerPage', function(userId) {
-      console.log('-------------------------------')
-      console.log(userId)
       //根据userId查别人关注的人
       listOtherAttention(userId.data).then(res => {
-        console.log(res)
-        that.data.info = res.data.data
-        console.log(this.data.info)
+        console.log('++++++++++++++++++++++++')
+
+        //TODO：
+        this.data.attentionInfo = res.data.data
       })
     })
-    
+    console.log('-------------------------------')
+    console.log(this.data.attentionInfo)
   },
 
   /**

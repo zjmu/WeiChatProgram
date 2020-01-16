@@ -32,8 +32,8 @@
     </view>
     <!-- 文章附加信息 -->
     <view class="articleAttach">
-      <view class="miniBox">浏览量</view>
-      <view class="miniBox">点赞量</view>
+      <view class="miniBox" bindtap="addFavorite" data-articleid="{{item.id}}">收藏</view>
+      <view class="miniBox" bindtap="like" data-articleid="{{item.id}}">点赞</view>
       <view class="miniBox" bindtap="iscommentTap" data-index='{{index}}' data-articleid='{{item.id}}'>评论</view>
       <!-- 评论体 -->
       <view wx:for="{{commentBody}}" wx:for-index="index1" wx:for-item="commentItem" wx:key='unique'>

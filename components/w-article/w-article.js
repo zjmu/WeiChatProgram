@@ -32,15 +32,30 @@ Component({
       //删除文章
       const id = e.currentTarget.dataset.articleid
       console.log(id)
-      deleteArticle(id)
-      //删除后查询文章
-      listArticleOfUser(this.data.pageNum,this.data.pageSize).then(res => {
-        console.log(res)
-        // this.setData({
-        //   articleList: res.data.data.list
-        // })
-        this.properties.articleList = res.data.data.list
-        console.log(this.data.articleList)
+      deleteArticle(id).then(res => {
+        if(res.data.code == 0) {
+          wx.showToast({
+            title: '删除成功',
+            icon: 'success',
+            duration: 1000,
+            mask:true
+          })
+          //删除后查询文章
+          listArticleOfUser(this.data.pageNum,this.data.pageSize).then(res => {
+            console.log(res)
+            this.setData({
+              articleList: res.data.data.list
+            })
+            console.log(this.data.articleList)
+          })
+        } else {
+          wx.showToast({
+            title: '删除失败',
+            icon: 'none',
+            duration: 1000,
+            mask:true
+          })
+        }
       })
     }
   }

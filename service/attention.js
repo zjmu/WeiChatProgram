@@ -14,3 +14,10 @@ export function listOtherAttention(userId) {
     }
   })
 }
+
+export function cancelAttention(id) {
+  return request({
+    url: '/attention/cancelAttention/'+id,
+    method: 'delete'
+  })
+}

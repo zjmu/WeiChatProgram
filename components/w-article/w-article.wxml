@@ -14,9 +14,9 @@
         </view>
     </view>
     <!-- 标题 -->
-    <view class="titleBox">这是一首简单的小情歌</view>
+    <view class="titleBox" wx:if="{{item.content != null}}">{{item.content}}</view>
     <!-- 内容 -->
-    <view class="textBox">这是一个内容</view>
+    <view class="textBox" wx:if="{{item.content != null}}">{{item.content}}</view>
     <!-- 资源： 音乐、视频、图片 -->
     <view class="resourceBox">
       <!-- todo:音乐内容 -->

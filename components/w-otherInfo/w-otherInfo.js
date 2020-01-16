@@ -1,4 +1,7 @@
-// components/w-otherInfo/w-otherInfo.js
+import {
+  cancelAttention,
+  listAttention
+} from '../../service/attention.js'
 Component({
   /**
    * 组件的属性列表
@@ -53,9 +56,39 @@ Component({
         }
       })
     },
+
     atten: function(e) {
       var userId = e.currentTarget.dataset.userid
       console.log(userId)
+      cancelAttention(userId).then(res => {
+        console.log(res)
+        if(res.data.code == 0) {
+          listAttention().then(res => {
+            this.setData({
+              info: res.data.data
+            })
+          })
+          this.cancelSuccess()
+        } else {
+          this.cancelFail()
+        }
+      })
+    },
+    cancelSuccess:function() {
+      wx.showToast({
+        title: '取消成功',
+        icon: 'success',
+        duration: 1000,
+        mask:true
+      })
+    },
+    cancelFail:function() {
+      wx.showToast({
+        title: '取消失败',
+        icon: 'none',
+        duration: 1000,
+        mask:true
+      })
     }
   }
 })

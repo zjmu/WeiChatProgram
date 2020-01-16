@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isEnd:false,
     pageNum: 1,
     pageSize: 10,
     articleList: [
@@ -25,7 +26,7 @@ Page({
       this.setData({
         articleList: res.data.data.list
       })
-      console.log(this.data.articleList1)
+      console.log(this.data.articleList)
     })
   },
 
@@ -61,16 +62,65 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.data.pageNum = 1
+    listArticlePage(this.data.pageNum,this.data.pageSize).then(res => {
+      if(res.data.code == 0) {
+        console.log(res)
+        this.setData({
+          articleList: res.data.data.list
+        })
+        wx.showToast({
+          title: '刷新成功',
+          icon: 'success',
+          duration: 1000,
+          mask:true
+        })
+        wx.stopPullDownRefresh()
+      } else {
+        wx.showToast({
+          title: '刷新失败',
+          icon: 'none',
+          duration: 1000,
+          mask:true
+        })
+        wx.stopPullDownRefresh()
+      }
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('我到底了')
-    this.data.pageNum++;
-    console.log(this.data.pageNum)
+    if(this.data.isEnd == false) {
+      this.data.pageNum++;
+      console.log(this.data.pageNum)
+      listArticlePage(this.data.pageNum,this.data.pageSize).then(res => {
+        if(res.data.data.list.length !=0 && res.data.data.pageNum >= this.data.pageNum) {
+          var array = this.data.articleList.concat(res.data.data.list)
+          console.log(res.data.data.list)
+          this.setData({
+            articleList: array
+          })
+        } else {
+          this.data.isEnd = true
+          wx.showToast({
+            title: '无更多数据',
+            icon: 'none',
+            duration: 1000,
+            mask:true
+          })
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '无更多数据',
+        icon: 'none',
+        duration: 1000,
+        mask:true
+      })
+    }
+    
   },
 
   /**

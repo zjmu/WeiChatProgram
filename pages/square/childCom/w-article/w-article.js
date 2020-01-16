@@ -3,6 +3,16 @@ import {
   listComment,
   createComment
 } from '../../../../service/comment.js'
+
+import {
+  addFavoriteArticle,
+  cancelFavoriteArticle
+} from '../../../../service/favorite.js'
+
+import {
+  likeArticle,
+  unlikeArticle
+} from '../../../../service/like.js'
 Component({
   /**
    * 组件的属性列表
@@ -99,6 +109,65 @@ Component({
     inputChange: function(e) {
       this.setData({
         commentText: e.detail.value
+      })
+    },
+
+    addFavorite: function(e) {
+      console.log(e.currentTarget.dataset.articleid)
+      const articleId = e.currentTarget.dataset.articleid
+      addFavoriteArticle(articleId).then(res => {
+        if(res.data.code == 0) {
+          wx.showToast({
+            title: res.data.data,
+            icon: 'success',
+            duration: 1000,
+            mask:true
+          })
+        } else {
+          wx.showToast({
+            title: res.data.message,
+            icon: 'none',
+            duration: 1000,
+            mask:true
+          })
+        }
+      })
+    },
+
+    cancelFavorite: function(e) {
+      console.log(e.currentTarget.dataset.articleid)
+      const articleId = e.currentTarget.dataset.articleid
+      cancelFavoriteArticle(articleId).then(res => {
+        if(res.data.code == 0) {
+          wx.showToast({
+            title: res.data.data,
+            icon: 'success',
+            duration: 1000,
+            mask:true
+          })
+        } else {
+          wx.showToast({
+            title: res.data.message,
+            icon: 'none',
+            duration: 1000,
+            mask:true
+          })
+        }
+      })
+    },
+    
+    like: function(e) {
+      console.log(e.currentTarget.dataset.articleid)
+      const articleId = e.currentTarget.dataset.articleid
+      likeArticle(articleId).then(res => {
+        console.log(res)
+      })
+    },
+
+    unlike: function(e) {
+      const articleId = e.currentTarget.dataset.articleid
+      unlikeArticle(articleId).then(res => {
+        console.log(res)
       })
     }
     
