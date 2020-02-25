@@ -11,9 +11,10 @@
     "pages/myLike/myLike",
     "pages/communication/communication",
     "pages/topicPage/topicPage",
-    "pages/host/host",
+    "pages/room/room",
     "pages/select/select",
-    "pages/otherAttention/otherAttention"
+    "pages/otherAttention/otherAttention",
+    "pages/markdown/markdown"
   ],
   "tabBar": {
     "list": [

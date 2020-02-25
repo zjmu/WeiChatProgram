@@ -136,6 +136,35 @@
 					"id": -1,
 					"name": "pages/image/image",
 					"pathName": "pages/image/image",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Markdown/markdown",
+					"pathName": "pages/Markdown/markdown",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/markdown/markdown",
+					"pathName": "pages/markdown/markdown",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/markdown/markdown",
+					"pathName": "pages/markdown/markdown",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/room/room",
+					"pathName": "pages/room/room",
+					"query": "",
 					"scene": null
 				}
 			]

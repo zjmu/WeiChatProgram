@@ -13,6 +13,10 @@ import {
   likeArticle,
   unlikeArticle
 } from '../../../../service/like.js'
+
+import {
+  reportArticle
+} from '../../../../service/article.js'
 Component({
   /**
    * 组件的属性列表
@@ -167,6 +171,14 @@ Component({
     unlike: function(e) {
       const articleId = e.currentTarget.dataset.articleid
       unlikeArticle(articleId).then(res => {
+        console.log(res)
+      })
+    },
+
+    report: function(e) {
+      const articleId = e.currentTarget.dataset.articleid
+      const userId = e.currentTarget.dataset.userid
+      reportArticle(articleId,userId).then(res => {
         console.log(res)
       })
     }

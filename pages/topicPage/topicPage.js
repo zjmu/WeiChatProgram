@@ -1,45 +1,37 @@
-// pages/topicPage/topicPage.js
+import {
+  listTopicPage
+} from '../../service/topicPage.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    articleList: [{
-      icon: '/assets/本周流行/本周流行.jpg',
-      nick: '绝色露台',
-      detail: '我很个性',
-      content: '的方式放松放松放松的方范德萨水电费水电费是发送到发送到发式笛梵地方',
-      lineCount: 2,
-      imageLis: 3,
-      imageList: {
-        type: Array,
-        value: [{ image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg'}]
-      }
-    },
-    {
-      nick: '绝色露台',
-      detail: '我很个性',
-      content: '的方式放松放松放松的方范德萨水电费水电费是发送到发送到发式笛梵地方',
-      lineCount: 2,
-      imageLis: 3,
-      imageList: {
-        type: Array,
-        value: [{ image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }, { image: '/assets/本周流行/本周流行.jpg' }]
-      }
-    }
-    ]
+    isEnd: false,
+    pageNum: 1,
+    pageSize: 10,
+    labelId:-1,
+    articleList: []
   },
 
   /**
    * 获取上个页面传递的值
    */
   onLoad: function (options) {
+    var that = this
     const eventChannel = this.getOpenerEventChannel();
-    eventChannel.on('acceptDataFromOpenerPage', function(data) {
-      console.log('-------------------------------')
-      console.log(data)
+    eventChannel.on('acceptDataFromOpenerPage', function(topicId) {
+      that.setData({
+        labelId: topicId.data
+      })
     })
+    listTopicPage(this.data.labelId,this.data.pageNum,this.data.pageSize).then(res => {
+      console.log(res)
+      this.setData({
+        articleList: res.data.data.list
+      })
+    })
+    console.log(this.data.articleList)
   },
 
   /**
@@ -81,7 +73,34 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(this.data.isEnd == false) {
+      this.data.pageNum++;
+      console.log(this.data.pageNum)
+      listTopicPage(this.data.labelId,this.data.pageNum,this.data.pageSize).then(res => {
+        if(res.data.data.list.length !=0 && res.data.data.pageNum >= this.data.pageNum) {
+          var array = this.data.articleList.concat(res.data.data.list)
+          console.log(res.data.data.list)
+          this.setData({
+            articleList: array
+          })
+        } else {
+          this.data.isEnd = true
+          wx.showToast({
+            title: '无更多数据',
+            icon: 'none',
+            duration: 1000,
+            mask:true
+          })
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '无更多数据',
+        icon: 'none',
+        duration: 1000,
+        mask:true
+      })
+    }
   },
 
   /**

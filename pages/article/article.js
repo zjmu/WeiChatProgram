@@ -123,7 +123,7 @@ Page({
     // 返回Promise是为了解决图片上传的异步问题
     return new Promise((resolve, reject) => {
       wx.uploadFile({
-        url: 'http://localhost:8080/article/uploadImage', // 上传地址
+        url: 'http://localhost:8091/bbs_client/article/uploadImage', // 上传地址
         filePath: filePath,
         name: 'file', // 这里的具体值，问后端人员
         formData: {

@@ -1,15 +1,15 @@
-<view class="flex-row" wx:for="{{info}}" wx:key="{{index}}" wx:for-item="item">
+<view class="flex-row" >
   <block>
     <!-- 用户基本信息 -->
     <view class="flex-view-item1">
         <view>
-          <image src="{{item.icon}}"></image>
+          <image src="{{info.icon}}"></image>
         </view>
         <view style="display:block;">
-          <input wx:if="{{isUpdate}}" class="nick" value="{{item.nick}}"></input>
-          <view wx:if="{{!isUpdate}}" class="nick">{{item.nick}}</view>
-          <input wx:if="{{isUpdate}}"  class="detail" value="{{item.detail}}"></input>
-          <view wx:if="{{!isUpdate}}" class="detail">{{item.detail}}</view>
+          <input wx:if="{{isUpdate}}" class="nick" value="{{info.nick}}"></input>
+          <view wx:if="{{!isUpdate}}" class="nick">{{info.nick}}</view>
+          <input wx:if="{{isUpdate}}"  class="detail" value="{{info.signature}}"></input>
+          <view wx:if="{{!isUpdate}}" class="detail">{{info.signature}}</view>
         </view>
         <!-- 修改信息 -->
         <view class="updateButton" bindtap="update">{{isUpdate? '完成':'修改'}}</view>
@@ -18,19 +18,80 @@
     <view class="divLine"></view>
     <view class="lineBox">
     <!-- 1.文章 -->
-      <view class="contentBox" bindtap="articleTap" data-id="{{item.userId}}">文章</view>
+      <view class="contentBox" bindtap="articleTap" data-id="{{info.id}}">文章</view>
     <!-- 2.关注 -->
-      <view class="contentBox" bindtap="attentionTap" data-id="{{item.userId}}">关注</view>
+      <view class="contentBox" bindtap="attentionTap" data-id="{{info.id}}">关注</view>
     <!-- 3.收藏 -->
-      <view class="contentBox" bindtap="likeTap" data-id="{{item.userId}}">收藏</view>
+      <view class="contentBox" bindtap="likeTap" data-id="{{info.id}}">收藏</view>
     </view>
     <!-- 住址 -->
-    <text class="begin">住址</text>
-    <input wx:if="{{isUpdate}}" class="other-input" value="{{item.home}}"></input>
-    <view wx:if="{{!isUpdate}}" class="other">{{item.home}}</view>
+    <view class="infoLine">
+      <text class="begin">住址</text>
+      <!-- 显示信息 -->
+      <view wx:if="{{home != null && home != ''}}" class="other" >{{home}}</view>
+      <view wx:if="{{home != null && home != ''}}" class="cancelBind" bindtap="cancel">解绑</view>
+      <!-- 显示绑定 -->
+      <view wx:if="{{home == null || home == ''}}" class="other" style="color:blue" bindtap="bind">绑定房间</view>
+    </view>
+
     <!-- 联系方式 -->
-    <text class="begin">电话</text>
-    <input wx:if="{{isUpdate}}" class="other-input" value="{{item.phone}}"></input>
-    <view wx:if="{{!isUpdate}}" class="ohter">{{item.phone}}</view>
+    <view class="infoLine">
+      <text class="begin">电话</text>
+      <input wx:if="{{isUpdate}}" class="other-input" value="{{info.phone}}"></input>
+      <view wx:if="{{!isUpdate}}" class="ohter">{{info.phone}}</view>
+    </view>
   </block>
+</view>
+
+<!-- 选择城市弹窗 -->
+<view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <view style="height:10% ;width:95%;margin-top:10rpx">
+    <text catchtap="cityCancel">取消</text>
+    <text style="float: right" catchtap="showDialogBtn">确定</text>
+  </view>
+  <picker-view style="width: 100%; height: 300px;" bindchange="areaChange" value="{{value}}" wx:key="">
+    <picker-view-column>
+      <view wx:for="{{area}}" class="picker-item" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{building}}" class="picker-item" wx:key="" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{unit}}" class="picker-item" wx:key="" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{floor}}" class="picker-item" wx:key="" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{roomCode}}" class="picker-item" wx:key="" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+<!--发送验证材料弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">请添加身份证，房产证照片或其他验证材料证明信息</view>
+  <view class="modal-content">
+   绑定地址：{{home}}
+  </view>
+  <text>请添加图片</text>
+  <view class="after-pic">
+    <block wx:for="{{imgList}}" wx:key="{{index}}">
+      <view class="pic">
+        <icon type="clear" size="15" catchtap="clearImg" data-id="{{index}}"/>
+        <image mode ="aspectFit" src="{{item}}"/>
+      </view>
+    </block>
+    <image src="/assets/image/添加图片.png" mode="aspectFit" catchtap="chooseImage" />
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
 </view>

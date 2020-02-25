@@ -60,8 +60,14 @@
    float: left;
    margin-bottom: 20rpx;
    margin-left: 20rpx;
-   width: 80%;
  }
+
+ .cancelBind {
+  float: right;
+  margin-bottom: 20rpx;
+  margin-right: 15rpx;
+  color:blueviolet
+}
 
  .other-input {
   float: left;
@@ -71,6 +77,10 @@
   background-color: azure;
  }
 
+ .infoLine {
+   float: left;
+   width: 100%;
+ }
  .begin {
    float: left;
  }
@@ -84,3 +94,133 @@
    height: 54rpx;
    width: 82rpx;
  }
+
+ .picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: gainsboro;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+
+/* -------弹窗样式------------ */
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 580rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 88rpx;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: #ec5300;
+  text-align: center;
+}
+
+/* 添加图片选框 */
+.after-pic {
+  background-color: yellow;
+}
+
+.after-pic image {
+  width:30%;
+  background-color: gray;
+  height: 190rpx;
+}
+
+.pic {
+  width: 30%;
+  background-color: red;
+  float: left;
+}
+
+.pic image {
+  width: 100%;
+  height: 130rpx;
+}

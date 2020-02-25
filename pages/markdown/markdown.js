@@ -1,30 +1,32 @@
-// pages/host/host.js
+import {
+  getSystemArticle
+} from '../../service/markdown'
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    md:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    getSystemArticle(18).then(res =>{
+      console.log(res)
+      console.log(res.data.data.markdown)
+      this.setData({
+        md: res.data.data.markdown
+      })
+      console.log(this.data.md)
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
 
   },

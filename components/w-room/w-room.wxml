@@ -1,0 +1,28 @@
+<view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <view style="height:10% ;width:95%;margin-top:10rpx">
+    <text catchtap="cityCancel">取消</text>
+    <text style="float: right" catchtap="citySure">确定</text>
+  </view>
+  <picker-view style="width: 100%; height: 300px;" bindchange="areaChange" value="{{value}}" wx:key="">
+    <picker-view-column>
+      <view wx:for="{{area}}" class="picker-item" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{building}}" class="picker-item" wx:key="" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{unit}}" class="picker-item" wx:key="" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{floor}}" class="picker-item" wx:key="" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{roomCode}}" class="picker-item" wx:key="" wx:for-item="item">
+        {{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

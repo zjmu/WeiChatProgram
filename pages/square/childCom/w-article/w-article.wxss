@@ -103,14 +103,17 @@
   height:35rpx;
   transition:transform  0.3s;
 }
-/* .list_item_box{
-  height: 0;
-  transition:height  0.3s;
-  overflow: hidden;
+
+.report {
+  position: relative;
+  left: calc(26%);
+  margin-top: 67rpx;
 }
-.list_item_box_show{
-  height: 500rpx;
-} */
+
+.reportText {
+  font-size:80%
+}
+
 .list_item_name_box{
   background: #fff;
   font-size: 30rpx;

@@ -1,14 +1,15 @@
 // pages/home/home.js
 
 import {
-  getMultiData
-} from '../../service/home.js'
+  listLabel
+} from '../../service/article.js'
 Page({
   data: {
     banners:[],
     recommends:[],
     navbar: ['体育','生活','敬老','追剧'],
     currentTab: 0,
+    topicItem1: [],
     topicItem: [{
       image: '/assets/image/篮球.jpg',
       text: '篮球协会',
@@ -44,14 +45,10 @@ Page({
     //todo:根据主题发送消息获取内容
   },
   onLoad: function (options) {
-    getMultiData().then(res => {
-      const banners = res.data.data.banner.list;
-      const recommends=res.data.data.recommend.list;
-      console.log(recommends)
-
+    listLabel().then(res => {
+      console.log(res)
       this.setData({
-        banners,
-        recommends
+        topicItem1: res.data.data
       })
     })
   },

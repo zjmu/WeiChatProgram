@@ -13,8 +13,8 @@ Page({
     pageNum: 1,
     pageSize: 10,
     articleList: [
-      ],
-      announcement: [{ image: '/assets/本周流行/本周流行.jpg',text:'这是一个广告' }, { image: '/assets/本周流行/本周流行.jpg',text:'这是一个大广告' }, { image: '/assets/本周流行/本周流行.jpg',text:'这是一个小广告' }]
+    ],
+    announcement: [{ image: '/assets/本周流行/本周流行.jpg',text:'这是一个广告' }, { image: '/assets/本周流行/本周流行.jpg',text:'这是一个大广告' }, { image: '/assets/本周流行/本周流行.jpg',text:'这是一个小广告' }]
   },
 
   /**
@@ -64,6 +64,7 @@ Page({
   onPullDownRefresh: function () {
     this.data.pageNum = 1
     listArticlePage(this.data.pageNum,this.data.pageSize).then(res => {
+      console.log(res)
       if(res.data.code == 0) {
         console.log(res)
         this.setData({

@@ -31,3 +31,15 @@ export function listArticleOfUser(pageNum, pageSize) {
   })
 }
 
+// 举报
+export function reportArticle(articleId, userId) {
+  return request({
+    url: '/aritcleReview/reportArticle',
+    method: 'post',
+    data: {
+      articleId,
+      userId
+    }
+  })
+}
+
